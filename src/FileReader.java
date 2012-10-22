@@ -43,6 +43,8 @@ public class FileReader {
 //	        return new String(bytes, "UTF-16");
 //	    } finally {
 //	        dis.close();
+        
+        //test
 //	    }
 
 		
