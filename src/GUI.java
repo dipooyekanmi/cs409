@@ -27,6 +27,9 @@ public class GUI extends JPanel{
 	JToolBar toolBar;
 	JScrollPane scrollPane;
 	JTextArea log;
+	LongParameter lp = new LongParameter("test");
+	switchStatements ss = new switchStatements();
+	
 	
 	public GUI(){
 		
@@ -46,7 +49,7 @@ public class GUI extends JPanel{
 		contentPane.setLayout(new BorderLayout());
 		contentPane.setPreferredSize(new Dimension(510, 530));
 		add(toolBar, BorderLayout.NORTH);
-		add(logScrollPane, BorderLayout.CENTER);
+		//add(logScrollPane, BorderLayout.CENTER);
 		
 		String[] columnNames = {"Bad Smell", "Score"};
 	
@@ -55,7 +58,7 @@ public class GUI extends JPanel{
 		
 		String[] columnNames = {"Bad Smell", "Score"};
 		
-		Object [][] data = {{"Long Method",new String(longMethod(file))}, {"Large Class", new Integer(largeClass(file))}, {"Long Parameter List", new Integer(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(switchStatements(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dataClass(file))}};
+		Object [][] data = {{"Long Method",new String(longMethod(file))}, {"Large Class", new Integer(largeClass(file))}, {"Long Parameter List", new Integer(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(ss.calc(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dataClass(file))}};
 		final JTable table = new JTable(data,columnNames);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 150));
         table.setFillsViewportHeight(true);
@@ -76,10 +79,10 @@ public class GUI extends JPanel{
 		return 2;
 	}
 
-	private int switchStatements(String file) {
-		// TODO Auto-generated method stub
-		return 3;
-	}
+//	private int switchStatements(String file) {
+//		// TODO Auto-generated method stub
+//		return 5;
+//	}
 
 	private int messChains(String file) {
 		// TODO Auto-generated method stub
@@ -88,7 +91,7 @@ public class GUI extends JPanel{
 
 	private int largeClass(String file) {
 		// TODO Auto-generated method stub
-		return 6;
+		return 10;
 	}
 
 	private int longParList(String file) {
