@@ -22,7 +22,7 @@ import javax.swing.table.DefaultTableModel;
 
 public class GUI extends JPanel{
 	JButton open = null;
-	JButton run = null;
+	JButton close = null;
 	static JFrame frame;
 	JToolBar toolBar;
 	JScrollPane scrollPane;
@@ -49,8 +49,8 @@ public class GUI extends JPanel{
 		JPanel contentPane = new JPanel();
 		contentPane.setLayout(new BorderLayout());
 		contentPane.setPreferredSize(new Dimension(510, 530));
-		add(toolBar, BorderLayout.NORTH);
-		//add(logScrollPane, BorderLayout.CENTER);
+		add(toolBar);
+		add(logScrollPane, BorderLayout.CENTER);
 		
 		String[] columnNames = {"Bad Smell", "Score"};
 	
@@ -134,7 +134,15 @@ public class GUI extends JPanel{
 			
 			}
 		});
+		close = new JButton("Close");
+		close.setToolTipText("Close the program");
+		close.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e){
+				System.exit(0);
+			}
+		});
 		toolBar.add(open);
+		toolBar.add(close);
 		
 	}
 
