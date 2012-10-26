@@ -32,9 +32,9 @@ public class LongParameter {
 	public void testString(String s){
 		int c = s.indexOf("public");
 		int p = s.indexOf("private");
-		if(c<p){
+		//if(c<p){
 		remaining = s.substring(c);
-		}System.out.println(p);
+		//}System.out.println(p);
 		int ob = remaining.indexOf("(");
 		int cb = remaining.indexOf(")");
 		String para = remaining.substring(ob, cb);
