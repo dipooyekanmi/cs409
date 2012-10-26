@@ -59,7 +59,7 @@ public class GUI extends JPanel{
 		
 		String[] columnNames = {"Bad Smell", "Score"};
 		
-		Object [][] data = {{"Long Method",new String(longMethod(file))}, {"Large Class", new Integer(largeClass(file))}, {"Long Parameter List", new Integer(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(ss.calc(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dc.calc(file))}};
+		Object [][] data = {{"Long Method",new String(longMethod(file))}, {"Large Class", new Integer(largeClass(file))}, {"Long Parameter List", new String(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(ss.calc(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dc.calc(file))}};
 		final JTable table = new JTable(data,columnNames);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 150));
         table.setFillsViewportHeight(true);
@@ -92,12 +92,12 @@ public class GUI extends JPanel{
 
 	private int largeClass(String file) {
 		// TODO Auto-generated method stub
-		return 10;
+		return 8;
 	}
 
-	private int longParList(String file) {
+	private String longParList(String file) {
 		// TODO Auto-generated method stub
-		return 7;
+		return "";
 	}
 
 	private String longMethod(String file) {
