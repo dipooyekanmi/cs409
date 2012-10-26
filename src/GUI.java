@@ -17,7 +17,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JToolBar;
-import javax.swing.table.DefaultTableModel;
 
 
 public class GUI extends JPanel{
@@ -69,21 +68,11 @@ public class GUI extends JPanel{
         frame.pack();
         validate();
 	}
-	
-	private int dataClass(String file) {
-		// TODO Auto-generated method stub
-		return 1;
-	}
 
 	private int tempField(String file) {
 		// TODO Auto-generated method stub
 		return 2;
 	}
-
-//	private int switchStatements(String file) {
-//		// TODO Auto-generated method stub
-//		return 5;
-//	}
 
 	private int messChains(String file) {
 		// TODO Auto-generated method stub
