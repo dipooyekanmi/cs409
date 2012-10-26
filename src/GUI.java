@@ -97,7 +97,11 @@ public class GUI extends JPanel{
 
 	private String longParList(String file) {
 		// TODO Auto-generated method stub
-		return "";
+		LongParameter lp = new LongParameter(file);
+		if(lp.getResult()){
+		return "Long Parameters!!";
+		}
+		else return "System OK";
 	}
 
 	private String longMethod(String file) {

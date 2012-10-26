@@ -6,6 +6,8 @@ public class LongParameter {
 	String file;
 	int count = 0;
 	int methodcount = 0;
+	boolean longPL = false;
+	String remaining;
 	
 	String pattern = "public|private|protected";
 	Pattern p = Pattern.compile(pattern);
@@ -16,8 +18,7 @@ public class LongParameter {
 	}
 
 	public void testFile(String s){
-		//for(int i=0; i<file.length(); i++){
-		if (s.contains("public void")){
+		if (s.contains("public void") || s.contains("public") ){
 			testString(s);
 		}
 		else{
@@ -25,12 +26,15 @@ public class LongParameter {
 				System.out.println("File doesn't contain methods/constructors");
 			}
 		}
-		//}
+		
 	}
 
 	public void testString(String s){
 		int c = s.indexOf("public");
-		String remaining = s.substring(c);
+		int p = s.indexOf("private");
+		if(c<p){
+		remaining = s.substring(c);
+		}System.out.println(p);
 		int ob = remaining.indexOf("(");
 		int cb = remaining.indexOf(")");
 		String para = remaining.substring(ob, cb);
@@ -54,8 +58,15 @@ public class LongParameter {
 			System.out.println("Method " + (methodcount+1) + " contains " + (count+1) + " parameters");
 			methodcount++;
 		}
+		if(count>=6){
+			longPL = true;
+		}
 		count = 0;
 		remaining = remaining.substring(cb);
 		testFile(remaining);
+	}
+	
+	public boolean getResult(){
+		return longPL;
 	}
 }
