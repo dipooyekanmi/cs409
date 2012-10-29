@@ -29,7 +29,8 @@ public class GUI extends JPanel{
 	LongParameter lp = new LongParameter("test");
 	switchStatements ss = new switchStatements();
 	dataClass dc = new dataClass();
-	
+	LongMethodFinder lm = new LongMethodFinder();
+	LongClassFinder lc = new LongClassFinder();
 	
 	public GUI(){
 		
@@ -58,7 +59,7 @@ public class GUI extends JPanel{
 		
 		String[] columnNames = {"Bad Smell", "Score"};
 		
-		Object [][] data = {{"Long Method",new String(longMethod(file))}, {"Large Class", new Integer(largeClass(file))}, {"Long Parameter List", new String(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(ss.calc(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dc.calc(file))}};
+		Object [][] data = {{"Long Method", lm.detectSmells(file)}, {"Large Class", lc.start(file)}, {"Long Parameter List", new String(longParList(file))}, {"Message Chains", new Integer(messChains(file))}, {"Switch Statements", new Integer(ss.calc(file))}, {"Temporary Fields", new Integer(tempField(file))}, {"Data Class", new Integer(dc.calc(file))}};
 		final JTable table = new JTable(data,columnNames);
 		table.setPreferredScrollableViewportSize(new Dimension(500, 150));
         table.setFillsViewportHeight(true);
