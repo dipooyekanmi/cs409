@@ -27,7 +27,7 @@ public class GUI extends JPanel{
 	JScrollPane scrollPane;
 	JTextArea log;
 	LongParameter lp = new LongParameter("test");
-	switchStatements ss = new switchStatements();
+	//switchStatements ss = new switchStatements();
 	dataClass dc = new dataClass();
 	LongMethodFinder lm = new LongMethodFinder();
 	LongClassFinder lc = new LongClassFinder();
