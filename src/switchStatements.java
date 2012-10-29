@@ -1,10 +1,10 @@
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.objectweb.asm.*;
+//import org.objectweb.asm.*;
 
 public class switchStatements {
 	
-	ClassWriter cw = new ClassWriter(0);
+	//ClassWriter cw = new ClassWriter(0);
 	
 	
 	public int calc(String file){
