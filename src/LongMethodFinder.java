@@ -25,7 +25,7 @@ public class LongMethodFinder{
 		try {
 			line = br.readLine();
 			
-			while (line != null){
+			for(int i = 0; i < file.length(); i++){
 				
 				
 				//Are we counting a method or looking for one?
